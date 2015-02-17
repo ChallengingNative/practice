@@ -1,0 +1,16 @@
+html, body {
+    background: url('../img/pattern.png') repeat;
+    font-family: Helvetica;
+}
+
+h1 {
+    text-align: center;
+    line-height: 100%;
+    font-size: 160px;
+    margin-bottom: 00px;
+}
+
+p {
+    text-align: center;
+    font-size: 40px;
+}

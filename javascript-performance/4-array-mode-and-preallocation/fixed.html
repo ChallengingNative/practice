@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fibonacci slowed down</title>
+    <link rel="stylesheet" href="../runner/css/style.css">
+    <script src="../runner/js/test-runner.js"></script>
+</head>
+<body></body>
+<script>
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    var dataLength = 10000,
+        limit = 50;
+
+    runTest(function () {
+        var data = new Array(dataLength),
+            result = new Array(dataLength), //Preallocated arrays are faster
+            resultsLength = 0;
+
+        for (var i = 0; i < dataLength; i++) { //Array should start with 0 to work in array mode, otherwise it switches to hash table mode
+            data[i] = (getRandomInt(0, 999));
+        }
+
+        for (var k = 0; k < dataLength; k++) {
+            if (data[k] > 50) {
+                result[resultsLength++] = data[k]; //Setting an array element is faster then pushing to array
+            }
+        }
+    });
+</script>
+</html>

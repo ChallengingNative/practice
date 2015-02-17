@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Fibonacci slowed down</title>
+    <link rel="stylesheet" href="../runner/css/style.css">
+    <script src="../runner/js/test-runner.js"></script>
+</head>
+<body></body>
+<script>
+    runTest(function () {
+        var i = 2,                  //Initializing variable with their type is faster
+            fib = new Array(1000);  //Preallocated arrays are faster
+
+        fib[0] = 0;
+        fib[1] = 1;
+
+        for (i = 2; i <= 1000; i++) {
+            fib[i] = fib[i - 2] + fib[i - 1];
+        }
+    });
+</script>
+</html>
