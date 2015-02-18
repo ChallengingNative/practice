@@ -8,8 +8,8 @@ Given website in ```initial``` folder, try to optimize it`s loading time by impl
 - Image sprites (via GULP)
 - Images optimization (via GULP)
 - Loading order optimization
-- Critical path separation (via GULP)
-
+- Critical path separation (via GUL
+ 
 
 Steps
 -----
@@ -86,3 +86,36 @@ return gulp.src('js/**/*.js')
     .pipe(gulp.dest('/buils/js/'));
 ```
 
+- In order to execute Gulp put ```gulp``` in the terminal. You will see that ```build``` folder created in this lesson`s directory and there we have all css, html, js minified and concatenated
+- The only missing part are fonts and images, let`s proceed with them
+- As for fonts - we are going just to copy them, for this let`s create one more task ```copyfonts``` as following
+
+```
+gulp.task('copyfonts', function() {
+    gulp.src('./fixed/fonts/*.*')
+        .pipe(gulp.dest('./build/fonts/'));
+});
+```
+
+- Since we have two tasks now - let`s rename default task to usemin and define ```default``` task as a combination of two by adding:
+
+```
+gulp.task('default', ['usemin', 'copyfonts']);
+```
+
+- Since we would like to minify traffic, let`s optimize images
+- Install ```gulp-imagemin``` and require it as imagemin
+- Add task for imagemin and register it as a part of default task:
+
+```
+gulp.task('imagemin', function() {
+    gulp.src('./fixed/img/*.*')
+        .pipe(imagemin({
+            progressive: true
+        }))
+        .pipe(gulp.dest('./build/img/'));
+});
+
+gulp.task('default', ['usemin', 'copyfonts', 'imagemin']);
+```
+- run ```gulp``` we see ```Minified 7 images (saved 49.93 kB - 16.7%)```.

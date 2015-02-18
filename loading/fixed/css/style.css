@@ -162,7 +162,7 @@ li {
     text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
     border: 4px solid #e2e2e2;
     border-radius: 45px;
-    background-image: url('../img/background-btn.png');
+    background-image: url('../img/button-back.png');
     width: 100%;
     text-decoration: none;
     color: #fff;
@@ -174,7 +174,7 @@ li {
 }
 
 .attend-workshop:active {
-    background-image: url('../img/button-pressed.png');
+    background-image: url('../img/button-back-pressed.png');
 }
 
 .inner-list-heading {
