@@ -118,4 +118,5 @@ gulp.task('imagemin', function() {
 
 gulp.task('default', ['usemin', 'copyfonts', 'imagemin']);
 ```
-- run ```gulp``` we see ```Minified 7 images (saved 49.93 kB - 16.7%)```.
+- Run ```gulp``` we see ```Minified 7 images (saved 49.93 kB - 16.7%)```
+- Cool now let think about loading order to speed up minimal experience delivery. Keep CSS in head and move scripts to the most bottom of the body tag then ```gulp``` again.
