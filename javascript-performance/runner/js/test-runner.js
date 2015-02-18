@@ -1,4 +1,4 @@
-runTest = function (testFunction) {
+runTest = function (testFunction, node) {
     setInterval(function () {
         var runs = 1000,
             times = new Array(runs);
@@ -16,6 +16,6 @@ runTest = function (testFunction) {
         sum = sum / repeat;
         sum = sum.toFixed(2);
 
-        document.body.innerHTML = "<h1>" + sum + "</h1><p>μs</p>";
+        node ? node.innerHTML = "<h1>" + sum + "</h1><p>μs</p>" : document.body.innerHTML = "<h1>" + sum + "</h1><p>μs</p>";
     }, 1000);
 }
