@@ -2,20 +2,19 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Array preallocation fixed</title>
+    <title>Array preallocation slow</title>
     <link rel="stylesheet" href="../runner/css/style.css">
     <script src="../runner/js/test-runner.js"></script>
 </head>
 <body></body>
 <script>
     runTest(function () {
-        var i = 2,                  //Initializing variable with their type is faster
-            fib = new Array(1000);  //Preallocated arrays are faster
+        var i, fib = [];
 
         fib[0] = 0;
         fib[1] = 1;
 
-        for (i = 2; i <= 1000; i++) {
+        for (i = 2; i <= 5000; i++) {
             fib[i] = fib[i - 2] + fib[i - 1];
         }
     });

@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Array type fixed</title>
+    <title>Array type slow</title>
     <link rel="stylesheet" href="../runner/css/style.css">
     <script src="../runner/js/test-runner.js"></script>
 </head>
@@ -12,16 +12,16 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    var dataLength = 15000, data = [];
+    var dataLength = 20000, data = [];
 
-    for (var i = 0; i <= dataLength; i++) {
-        data.push(getRandomInt(0, 10)); //Switching to integer increases performance on array iteration and filtering
+    for (var i = 1; i <= dataLength; i++) {
+        data[i] = (Math.random());
     }
 
     runTest(function () {
         var result = [];
-        for (var k = 0; k <= dataLength; k++) {
-            if (data[k] > 5) {
+        for (var k = 1; k <= dataLength; k++) {
+            if (data[k] > 0.5) {
                 result.push(data[k]);
             }
         }

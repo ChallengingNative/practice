@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Array mode and preallocation slow</title>
+    <title>Array mode and preallocation fixed</title>
     <link rel="stylesheet" href="../runner/css/style.css">
     <script src="../runner/js/test-runner.js"></script>
 </head>
@@ -12,20 +12,21 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-    var dataLength = 10000,
+    var dataLength = 20000,
         limit = 50;
 
     runTest(function () {
         var data = new Array(dataLength),
-            result = [];
+            result = new Array(dataLength), //Preallocated arrays are faster
+            resultsLength = 0;
 
-        for (var i = 1; i <= dataLength; i++) {
+        for (var i = 0; i < dataLength; i++) { //Array should start with 0 to work in array mode, otherwise it switches to hash table mode
             data[i] = (getRandomInt(0, 999));
         }
 
-        for (var k = 1; k <= dataLength; k++) {
+        for (var k = 0; k < dataLength; k++) {
             if (data[k] > 50) {
-                result.push(data[k]);
+                result[resultsLength++] = data[k]; //Setting an array element is faster then pushing to array
             }
         }
     });
