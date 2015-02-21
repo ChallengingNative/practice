@@ -97,7 +97,7 @@ gulp.task('copyfonts', function() {
 });
 ```
 
-- Since we have two tasks now - let`s rename default task to usemin and define ```default``` task as a combination of two by adding:
+- Since we have two tasks now - let\`s rename default task to usemin and define ```default``` task as a combination of two by adding:
 
 ```
 gulp.task('default', ['usemin', 'copyfonts']);
