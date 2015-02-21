@@ -88,7 +88,7 @@ return gulp.src('js/**/*.js')
 
 - In order to execute Gulp put ```gulp``` in the terminal. You will see that ```build``` folder created in this lesson`s directory and there we have all css, html, js minified and concatenated
 - The only missing part are fonts and images, let`s proceed with them
-- As for fonts - we are going just to copy them, for this let`s create one more task ```copyfonts``` as following
+- As for fonts - we are going just to copy them, for this let\`s create one more task ```copyfonts``` as following
 
 ```
 gulp.task('copyfonts', function() {
