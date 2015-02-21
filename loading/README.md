@@ -47,9 +47,9 @@ var minifyCss = require('gulp-minify-css');
 - Find place where CSS file are included and wrap it with comments like following:
 
 ```
-&lt;!-- build:css style.min.css -->
-&lt;link href="css/style.css" rel="stylesheet" type="text/css">
-&lt;!-- endbuild -->
+<!-- build:css style.min.css -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!-- endbuild -->
 
 ```
 
@@ -57,11 +57,11 @@ var minifyCss = require('gulp-minify-css');
 
 
 ```
-&lt;!-- build:js js/build.js -->
-&lt;script src="js/vendor/jquery-1.11.2.min.js"></script>
-&lt;script src="js/vendor/underscore-min.js"></script>
-&lt;script src="js/vendor/main.js"></script>
-&lt;!-- endbuild -->
+<!-- build:js js/build.js -->
+<script src="js/vendor/jquery-1.11.2.min.js"></script>
+<script src="js/vendor/underscore-min.js"></script>
+<script src="js/vendor/main.js"></script>
+<!-- endbuild -->
 
 ```
 
