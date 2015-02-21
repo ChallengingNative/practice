@@ -8,7 +8,7 @@ Given website in ```initial``` folder, try to optimize it`s loading time by impl
 - Image sprites (via GULP)
 - Images optimization (via GULP)
 - Loading order optimization
-- Critical path separation (via GUL
+- Critical path separation (via GULP)
  
 
 Steps
