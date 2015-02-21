@@ -8,7 +8,7 @@ Given website in ```initial``` folder, try to optimize it`s loading time by impl
 - Image sprites (via GULP)
 - Images optimization (via GULP)
 - Loading order optimization
-- Critical path separation (via GUL
+- Critical path separation (via GULP)
  
 
 Steps
@@ -47,9 +47,9 @@ var minifyCss = require('gulp-minify-css');
 - Find place where CSS file are included and wrap it with comments like following:
 
 ```
-&lt;!-- build:css style.min.css -->
-&lt;link href="css/style.css" rel="stylesheet" type="text/css">
-&lt;!-- endbuild -->
+<!-- build:css style.min.css -->
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<!-- endbuild -->
 
 ```
 
@@ -57,11 +57,11 @@ var minifyCss = require('gulp-minify-css');
 
 
 ```
-&lt;!-- build:js js/build.js -->
-&lt;script src="js/vendor/jquery-1.11.2.min.js"></script>
-&lt;script src="js/vendor/underscore-min.js"></script>
-&lt;script src="js/vendor/main.js"></script>
-&lt;!-- endbuild -->
+<!-- build:js js/build.js -->
+<script src="js/vendor/jquery-1.11.2.min.js"></script>
+<script src="js/vendor/underscore-min.js"></script>
+<script src="js/vendor/main.js"></script>
+<!-- endbuild -->
 
 ```
 
@@ -88,7 +88,7 @@ return gulp.src('js/**/*.js')
 
 - In order to execute Gulp put ```gulp``` in the terminal. You will see that ```build``` folder created in this lesson`s directory and there we have all css, html, js minified and concatenated
 - The only missing part are fonts and images, let`s proceed with them
-- As for fonts - we are going just to copy them, for this let`s create one more task ```copyfonts``` as following
+- As for fonts - we are going just to copy them, for this let\`s create one more task ```copyfonts``` as following
 
 ```
 gulp.task('copyfonts', function() {
@@ -97,7 +97,7 @@ gulp.task('copyfonts', function() {
 });
 ```
 
-- Since we have two tasks now - let`s rename default task to usemin and define ```default``` task as a combination of two by adding:
+- Since we have two tasks now - let\`s rename default task to usemin and define ```default``` task as a combination of two by adding:
 
 ```
 gulp.task('default', ['usemin', 'copyfonts']);
