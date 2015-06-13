@@ -873,17 +873,17 @@
 <script src="../runner/js/test-runner.js"></script>
 <script>
     function searchNoCaching(selector) {
-        return document.querySelectorAll(selector);
+        return Array.prototype.slice.call(document.querySelectorAll(selector));
     }
 
     var node = document.getElementById('test-text');
     runTest(function () {
         var nodes = searchNoCaching('div .author');
         for (var i = 0; i < nodes.length; i++) {
-            if (nodes[i].style !== 'none') {
-                nodes[i].style = 'none';
+            if (nodes[i].style.display !== 'none') {
+                nodes[i].style.display = 'none';
             } else {
-                nodes[i].style = 'block';
+                nodes[i].style.display = 'block';
             }
         }
     }, node);
