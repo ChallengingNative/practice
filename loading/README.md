@@ -69,7 +69,7 @@ var minifyCss = require('gulp-minify-css');
 
 ```
 
-return gulp.src('./fixed/*.html')
+return gulp.src('./initial/*.html')
         .pipe(usemin({
             css: [minifyCss(), 'concat'],
             html: [minifyHtml({empty: true})],
